@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  username: <%= ENV['IBEDECGO_DATABASE_USERNAME'] %>
+  password: <%= ENV['IBEDECGO_DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: ibedecgo_development
+
+test:
+  <<: *default
+  database: ibedecgo_test
+
+production:
+  <<: *default
+  database: ibedecgo_production
