@@ -11,4 +11,9 @@ class User < ApplicationRecord
   validates :phone, presence: true, uniqueness: true
   validates :gender, presence: true
   validates :birth_date, presence: true
+
+  has_attached_file :avatar,
+                    styles: { medium: '300x300>', thumb: '100x100>' },
+                    default_url: '/assets/:style/missing.png'
+  validates_attachment_content_type :avatar, content_type: %r{\Aimage/.*\z}
 end
