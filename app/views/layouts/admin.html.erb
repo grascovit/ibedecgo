@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IBEDEC-GO</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="ui container">
+      <br>
+      <div class="ui secondary menu">
+        <div class="header">
+          <%= link_to 'IBEDEC-GO', '#', class: 'ui item' %>
+        </div>
+        <div class="right menu">
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'ui item' %>
+        </div>
+      </div>
+      <div class="ui divider"></div>
+      <br>
+      <div class="ui grid">
+        <div class="four wide column">
+          <div class="ui secondary vertical pointing menu">
+            <%= link_to 'Início', '#', class: 'active item' %>
+            <%= link_to 'Notícias', '#', class: 'item' %>
+            <%= link_to 'Usuários', '#', class: 'item' %>
+          </div>
+        </div>
+        <div class="twelve wide column">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
