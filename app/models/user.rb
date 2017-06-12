@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :address, dependent: :destroy
+  has_many :posts
 
   validates :first_name, presence: true
   validates :cpf, presence: true, uniqueness: true, length: { is: 11 }
@@ -14,6 +15,6 @@ class User < ApplicationRecord
 
   has_attached_file :avatar,
                     styles: { medium: '300x300>', thumb: '100x100>' },
-                    default_url: '/assets/:style/missing.png'
+                    default_url: '/assets/:style/missing-avatar.png'
   validates_attachment_content_type :avatar, content_type: %r{\Aimage/.*\z}
 end
