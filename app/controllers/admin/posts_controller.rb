@@ -20,6 +20,7 @@ class Admin::PostsController < AdminController
   # POST /posts
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
 
     if @post.save
       redirect_to admin_post_url(@post), notice: 'Notícia criada com sucesso.'
@@ -50,6 +51,6 @@ class Admin::PostsController < AdminController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :image, :user_id)
+    params.require(:post).permit(:title, :body, :image)
   end
 end
