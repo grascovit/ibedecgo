@@ -1,0 +1,36 @@
+<table class="ui celled table">
+  <thead>
+    <tr class="center aligned">
+      <th>Imagem</th>
+      <th>Título</th>
+      <th>Autor(a)</th>
+      <th>Criada em</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr class="center aligned">
+        <td>
+          <div class="ui image">
+            <%= image_tag post.image.url(:medium), class: 'ui small image' %>
+          </div>
+        </td>
+        <td>
+          <%= post.title %>
+        </td>
+        <td>
+          <%= post.user.full_name %>
+        </td>
+        <td>
+          <%= format_timestamp(post.created_at) %>
+        </td>
+        <td>
+          <%= link_to 'Editar', admin_post_path(post) %>
+          <br>
+          <%= link_to 'Excluir', admin_post_path(post), data: {confirm: 'Você tem certeza?'}, method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
