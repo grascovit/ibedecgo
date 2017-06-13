@@ -23,10 +23,10 @@
       <br>
       <div class="ui grid">
         <div class="four wide column">
-          <div class="ui secondary vertical pointing menu">
-            <%= link_to 'Início', '#', class: 'active item' %>
-            <%= link_to 'Notícias', '#', class: 'item' %>
-            <%= link_to 'Usuários', '#', class: 'item' %>
+          <div class="ui secondary vertical pointing fluid menu">
+            <%= link_to 'Início', admin_root_path, class: "item #{active_menu_item_class(admin_root_path)}" %>
+            <%= link_to 'Notícias', admin_posts_path, class: "item #{active_menu_item_class(admin_posts_path)}" %>
+            <%= link_to 'Usuários', admin_users_path, class: "item #{active_menu_item_class(admin_users_path)}" %>
           </div>
         </div>
         <div class="twelve wide column">
