@@ -18,4 +18,12 @@ RSpec.describe ApplicationHelper, type: :helper do
       end
     end
   end
+
+  describe '#format_timestamp' do
+    it 'returns the formatted time string' do
+      post = create(:post, created_at: '13-06-2017 00:00')
+
+      expect(helper.format_timestamp(post.created_at)).to eq('13/06/2017 00:00')
+    end
+  end
 end
