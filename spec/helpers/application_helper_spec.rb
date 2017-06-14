@@ -26,4 +26,18 @@ RSpec.describe ApplicationHelper, type: :helper do
       expect(helper.format_timestamp(post.created_at)).to eq('13/06/2017 00:00')
     end
   end
+
+  describe '#flash_message_class' do
+    context 'when the flash is a notice' do
+      it 'returns the positive string' do
+        expect(helper.flash_message_class('notice')).to eq('positive')
+      end
+    end
+
+    context 'when the flash is an alert' do
+      it 'returns the negative string' do
+        expect(helper.flash_message_class('alert')).to eq('negative')
+      end
+    end
+  end
 end

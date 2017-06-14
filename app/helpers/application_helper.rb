@@ -3,6 +3,14 @@ module ApplicationHelper
     current_page?(path) ? 'active' : ''
   end
 
+  def flash_message_class(type)
+    if type == 'notice'
+      'positive'
+    elsif type == 'alert'
+      'negative'
+    end
+  end
+
   def format_timestamp(timestamp)
     timestamp.strftime('%d/%m/%Y %H:%M')
   end
