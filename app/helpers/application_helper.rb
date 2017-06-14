@@ -10,8 +10,4 @@ module ApplicationHelper
       'negative'
     end
   end
-
-  def format_timestamp(timestamp)
-    timestamp.strftime('%d/%m/%Y %H:%M')
-  end
 end

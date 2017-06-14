@@ -15,7 +15,7 @@
         </div>
         <div class="meta">
           <p class="date">
-            Criada em: <%= format_timestamp(post.created_at) %>
+            Criada em: <%= l(post.created_at) %>
           </p>
           <p class="author">
             Autor(a): <%= post.user.full_name %>
