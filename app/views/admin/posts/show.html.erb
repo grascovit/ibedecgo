@@ -1,0 +1,33 @@
+<div class="ui items">
+  <div class="item">
+    <div class="image">
+      <%= image_tag @post.image.url(:medium) %>
+    </div>
+    <div class="content">
+      <div class="header">
+        <%= @post.title %>
+      </div>
+      <div class="meta">
+        <span class="author">
+          <%= @post.user.full_name %>
+        </span>
+        <span class="date">
+          <%= format_timestamp(@post.created_at) %>
+        </span>
+      </div>
+      <div class="description">
+        <%= @post.body.html_safe %>
+      </div>
+      <div class="extra">
+        <%= link_to edit_admin_post_path(@post), class: 'ui mini blue inverted button' do %>
+          <i class="edit icon"></i>
+          Editar
+        <% end %>
+        <%= link_to admin_post_path(@post), class: 'ui mini red inverted button', data: {confirm: 'Você tem certeza?'}, method: :delete do %>
+          <i class="trash icon"></i>
+          Excluir
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

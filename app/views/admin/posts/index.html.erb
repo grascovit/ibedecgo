@@ -1,36 +1,41 @@
-<table class="ui celled table">
-  <thead>
-    <tr class="center aligned">
-      <th>Imagem</th>
-      <th>Título</th>
-      <th>Autor(a)</th>
-      <th>Criada em</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr class="center aligned">
-        <td>
-          <div class="ui image">
-            <%= image_tag post.image.url(:medium), class: 'ui small image' %>
-          </div>
-        </td>
-        <td>
+<%= link_to new_admin_post_path, class: 'ui fluid green inverted button' do %>
+    <i class="comment outline icon"></i>
+    Criar notícia
+<% end %>
+
+<div class="ui divided relaxed items">
+  <% @posts.each do |post| %>
+    <div class="item">
+      <div class="ui small image">
+        <%= image_tag post.image.url(:medium) %>
+      </div>
+      <div class="content">
+        <div class="header">
           <%= post.title %>
-        </td>
-        <td>
-          <%= post.user.full_name %>
-        </td>
-        <td>
-          <%= format_timestamp(post.created_at) %>
-        </td>
-        <td>
-          <%= link_to 'Editar', admin_post_path(post) %>
-          <br>
-          <%= link_to 'Excluir', admin_post_path(post), data: {confirm: 'Você tem certeza?'}, method: :delete %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+        </div>
+        <div class="meta">
+          <p class="date">
+            Criada em: <%= format_timestamp(post.created_at) %>
+          </p>
+          <p class="author">
+            Autor(a): <%= post.user.full_name %>
+          </p>
+        </div>
+        <div class="extra">
+          <%= link_to admin_post_path(post), class: 'ui mini green inverted button' do %>
+              <i class="unhide icon"></i>
+              Visualizar
+          <% end %>
+          <%= link_to edit_admin_post_path(post), class: 'ui mini blue inverted button' do %>
+              <i class="edit icon"></i>
+              Editar
+          <% end %>
+          <%= link_to admin_post_path(post), class: 'ui mini red inverted button', data: {confirm: 'Você tem certeza?'}, method: :delete do %>
+              <i class="trash icon"></i>
+              Excluir
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
