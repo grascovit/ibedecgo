@@ -1,0 +1,41 @@
+<%= link_to new_admin_post_path, class: 'ui fluid green inverted button' do %>
+    <i class="comment outline icon"></i>
+    Criar notícia
+<% end %>
+
+<div class="ui divided relaxed items">
+  <% @posts.each do |post| %>
+    <div class="item">
+      <div class="ui small image">
+        <%= image_tag post.image.url(:medium) %>
+      </div>
+      <div class="content">
+        <div class="header">
+          <%= post.title %>
+        </div>
+        <div class="meta">
+          <p>
+            Criada em: <%= l(post.created_at) %>
+          </p>
+          <p>
+            Autor(a): <%= post.user.full_name %>
+          </p>
+        </div>
+        <div class="extra">
+          <%= link_to admin_post_path(post), class: 'ui mini green inverted button' do %>
+              <i class="unhide icon"></i>
+              Visualizar
+          <% end %>
+          <%= link_to edit_admin_post_path(post), class: 'ui mini blue inverted button' do %>
+              <i class="edit icon"></i>
+              Editar
+          <% end %>
+          <%= link_to admin_post_path(post), class: 'ui mini red inverted button', data: {confirm: 'Você tem certeza?'}, method: :delete do %>
+              <i class="trash icon"></i>
+              Excluir
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
