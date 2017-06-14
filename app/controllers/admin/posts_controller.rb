@@ -3,7 +3,7 @@ class Admin::PostsController < AdminController
 
   # GET /posts
   def index
-    @posts = Post.by_created_date
+    @posts = Post.includes(:user).by_created_date
   end
 
   # GET /posts/1
