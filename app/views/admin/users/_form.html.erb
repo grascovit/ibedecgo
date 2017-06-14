@@ -1,0 +1,55 @@
+<%= form_for [:admin, @user], html: { class: 'ui form' } do |f| %>
+  <%= render 'shared/error_messages', object: @user %>
+
+  <div class="ui grid">
+    <div class="row">
+      <div class="column">
+        <div class="field">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, required: true %>
+        </div>
+        <div class="field">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name %>
+        </div>
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, required: true %>
+        </div>
+
+        <% if @user.new_record? %>
+          <div class="field">
+            <%= f.label :password %>
+            <%= f.password_field :password, required: true %>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label :cpf %>
+          <%= f.text_field :cpf, maxlength: 11, required: true %>
+        </div>
+        <div class="field">
+          <%= f.label :phone %>
+          <%= f.text_field :phone, required: true %>
+        </div>
+        <div class="field">
+          <%= f.label :gender %>
+          <%= f.select :gender, gender_options %>
+        </div>
+        <div class="field">
+          <%= f.label :birth_date %>
+          <%= f.date_field :birth_date, required: true %>
+        </div>
+        <div class="field">
+          <%= f.label :avatar %>
+          <%= f.file_field :avatar %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <%= f.submit 'Enviar', class: 'ui submit fluid blue inverted button' %>
+      </div>
+    </div>
+  </div>
+<% end %>

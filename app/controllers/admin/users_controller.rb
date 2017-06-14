@@ -58,7 +58,8 @@ class Admin::UsersController < AdminController
       :cpf,
       :phone,
       :gender,
-      :birth_date
+      :birth_date,
+      :avatar
     )
   end
 end
