@@ -26,6 +26,20 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.delivery_method = :smtp
+
+  ActionMailer::Base.smtp_settings = {
+    user_name: ENV['MAILGUN_USERNAME'],
+    password: ENV['MAILGUN_PASSWORD'],
+    domain: ENV['MAILGUN_DOMAIN'],
+    address: ENV['MAILGUN_HOSTNAME'],
+    port: 587,
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 

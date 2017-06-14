@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IBEDEC-GO</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="ui container">
+      <div class="ui secondary menu">
+        <div class="header">
+          <%= link_to '#', class: 'ui item' do %>
+            <strong>IBEDEC-GO</strong>
+          <% end %>
+        </div>
+        <div class="right menu">
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'ui item' %>
+        </div>
+      </div>
+      <div class="ui divider"></div>
+      <div class="ui grid">
+        <div class="four wide column">
+          <div class="ui secondary vertical pointing fluid menu">
+            <%= link_to 'Início', admin_root_path, class: "item #{active_menu_item_class(admin_root_path)}" %>
+            <%= link_to 'Notícias', admin_posts_path, class: "item #{active_menu_item_class(admin_posts_path)}" %>
+            <%= link_to 'Usuários', admin_users_path, class: "item #{active_menu_item_class(admin_users_path)}" %>
+          </div>
+        </div>
+        <div class="twelve wide column">
+          <%= render 'shared/flash_messages' %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

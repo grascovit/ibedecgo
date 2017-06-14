@@ -1,0 +1,38 @@
+<%= link_to new_admin_user_path, class: 'ui fluid green inverted button' do %>
+    <i class="user icon"></i>
+    Criar usuário
+<% end %>
+
+<div class="ui divided relaxed items">
+  <% @users.each do |user| %>
+    <div class="item">
+      <div class="ui small image">
+        <%= image_tag user.avatar.url(:medium) %>
+      </div>
+      <div class="content">
+        <div class="header">
+          <%= user.full_name %>
+        </div>
+        <div class="meta">
+          <p>
+            Email: <%= user.email %>
+          </p>
+        </div>
+        <div class="extra">
+          <%= link_to admin_user_path(user), class: 'ui mini green inverted button' do %>
+              <i class="unhide icon"></i>
+              Visualizar
+          <% end %>
+          <%= link_to edit_admin_user_path(user), class: 'ui mini blue inverted button' do %>
+              <i class="edit icon"></i>
+              Editar
+          <% end %>
+          <%= link_to admin_user_path(user), class: 'ui mini red inverted button', data: {confirm: 'Você tem certeza?'}, method: :delete do %>
+              <i class="trash icon"></i>
+              Excluir
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

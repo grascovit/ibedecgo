@@ -1,0 +1,39 @@
+<div class="ui items">
+  <div class="item">
+    <div class="image">
+      <%= image_tag @user.avatar.url(:medium) %>
+    </div>
+    <div class="content">
+      <div class="header">
+        <%= @user.full_name %>
+      </div>
+      <div class="description">
+        <p>
+          Email: <%= @user.email %>
+        </p>
+        <p>
+          Telefone: <%= @user.phone %>
+        </p>
+        <p>
+          CPF: <%= @user.cpf %>
+        </p>
+        <p>
+          Sexo: <%= gender_i18n(@user.gender) %>
+        </p>
+        <p>
+          Data de nascimento: <%= l(@user.birth_date) %>
+        </p>
+      </div>
+      <div class="extra">
+        <%= link_to edit_admin_user_path(@user), class: 'ui mini blue inverted button' do %>
+            <i class="edit icon"></i>
+            Editar
+        <% end %>
+        <%= link_to admin_user_path(@user), class: 'ui mini red inverted button', data: {confirm: 'Você tem certeza?'}, method: :delete do %>
+            <i class="trash icon"></i>
+            Excluir
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
