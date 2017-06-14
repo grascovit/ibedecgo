@@ -27,6 +27,10 @@ pt-BR:
         cpf: CPF
         phone: Telefone
         gender: Sexo
+        genders:
+          male: Masculino
+          female: Feminino
+          not_telling: Não informado
         birth_date: Data de nascimento
         address: Endereço
     errors:
