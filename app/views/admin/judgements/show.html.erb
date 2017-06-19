@@ -1,0 +1,36 @@
+<div class="ui items">
+  <div class="item">
+    <div class="content">
+      <div class="header">
+        <%= @judgement.title %>
+      </div>
+      <div class="description">
+        <p>
+          Data: <%= l(@judgement.released_at, default: '--/--/----') %>
+        </p>
+        <p>
+          Adicionada por: <%= @judgement.user.full_name %>
+        </p>
+        <p>
+          Criada em: <%= l(@judgement.created_at) %>
+        </p>
+        <p>
+          Categoria: <%= category_i18n(@judgement.category) %>
+        </p>
+        <p>
+          Documento: <%= link_to @judgement.attachment.original_filename, @judgement.attachment.url, target: '_blank' %>
+        </p>
+      </div>
+      <div class="extra">
+        <%= link_to edit_admin_judgement_path(@judgement), class: 'ui mini blue inverted button' do %>
+            <i class="edit icon"></i>
+            Editar
+        <% end %>
+        <%= link_to admin_judgement_path(@judgement), class: 'ui mini red inverted button', data: {confirm: 'Você tem certeza?'}, method: :delete do %>
+            <i class="trash icon"></i>
+            Excluir
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

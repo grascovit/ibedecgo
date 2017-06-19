@@ -1,0 +1,38 @@
+<%= link_to new_admin_judgement_path, class: 'ui fluid green inverted button' do %>
+    <i class="file text outline icon"></i>
+    Criar sentença
+<% end %>
+
+<div class="ui divided relaxed items">
+  <% @judgements.each do |judgement| %>
+      <div class="item">
+        <div class="content">
+          <div class="header">
+            <%= judgement.title %>
+          </div>
+          <div class="meta">
+            <p>
+              Criada em: <%= l(judgement.created_at) %>
+            </p>
+            <p>
+              Categoria: <%= category_i18n(judgement.category) %>
+            </p>
+          </div>
+          <div class="extra">
+            <%= link_to admin_judgement_path(judgement), class: 'ui mini green inverted button' do %>
+                <i class="unhide icon"></i>
+                Visualizar
+            <% end %>
+            <%= link_to edit_admin_judgement_path(judgement), class: 'ui mini blue inverted button' do %>
+                <i class="edit icon"></i>
+                Editar
+            <% end %>
+            <%= link_to admin_judgement_path(judgement), class: 'ui mini red inverted button', data: {confirm: 'Você tem certeza?'}, method: :delete do %>
+                <i class="trash icon"></i>
+                Excluir
+            <% end %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>

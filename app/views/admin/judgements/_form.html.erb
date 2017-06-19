@@ -1,0 +1,31 @@
+<%= form_for [:admin, @judgement], html: { class: 'ui form' } do |f| %>
+    <%= render 'shared/error_messages', object: @judgement %>
+
+    <div class="ui grid">
+      <div class="row">
+        <div class="column">
+          <div class="field">
+            <%= f.label :title %>
+            <%= f.text_field :title, required: true %>
+          </div>
+          <div class="field">
+            <%= f.label :released_at %>
+            <%= f.date_field :released_at %>
+          </div>
+          <div class="field">
+            <%= f.label :category %>
+            <%= f.select :category, category_options, { include_blank: 'Selecione uma categoria' }, required: true %>
+          </div>
+          <div class="field">
+            <%= f.label :attachment %>
+            <%= f.file_field :attachment %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <%= f.submit 'Enviar', class: 'ui submit fluid blue inverted button' %>
+        </div>
+      </div>
+    </div>
+<% end %>
