@@ -3,7 +3,7 @@ class Admin::JudgementsController < AdminController
 
   # GET /judgements
   def index
-    @judgements = Judgement.includes(:user).all
+    @judgements = Judgement.by_created_date
   end
 
   # GET /judgements/1
