@@ -1,0 +1,35 @@
+<%= form_for [:admin, @booklet], html: { class: 'ui form' } do |f| %>
+    <%= render 'shared/error_messages', object: @booklet %>
+
+    <div class="ui grid">
+      <div class="row">
+        <div class="column">
+          <div class="field">
+            <%= f.label :title %>
+            <%= f.text_field :title, required: true %>
+          </div>
+          <div class="field">
+            <%= f.label :description %>
+            <%= f.text_area :description %>
+          </div>
+          <div class="field">
+            <%= f.label :year %>
+            <%= f.number_field :year, required: true %>
+          </div>
+          <div class="field">
+            <%= f.label :category %>
+            <%= f.select :category, booklet_category_options, { include_blank: 'Selecione uma categoria' }, required: true %>
+          </div>
+          <div class="field">
+            <%= f.label :attachment %>
+            <%= f.file_field :attachment %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <%= f.submit 'Enviar', class: 'ui submit fluid blue inverted button' %>
+        </div>
+      </div>
+    </div>
+<% end %>

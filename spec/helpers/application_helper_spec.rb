@@ -32,4 +32,24 @@ RSpec.describe ApplicationHelper, type: :helper do
       end
     end
   end
+
+  describe '#attachment_icon_class' do
+    context 'when the attachment is a PDF' do
+      it 'returns the pdf icon class' do
+        expect(helper.attachment_icon_class(ApplicationHelper::PDF_MIME_TYPE)).to eq 'massive red file pdf outline document icon'
+      end
+    end
+
+    context 'when the attachment is a DOC' do
+      it 'returns the word icon class' do
+        expect(helper.attachment_icon_class(ApplicationHelper::DOC_MIME_TYPE)).to eq 'massive blue file word outline document icon'
+      end
+    end
+
+    context 'when the attachment is a DOCX' do
+      it 'returns the word icon class' do
+        expect(helper.attachment_icon_class(ApplicationHelper::DOCX_MIME_TYPE)).to eq 'massive blue file word outline document icon'
+      end
+    end
+  end
 end

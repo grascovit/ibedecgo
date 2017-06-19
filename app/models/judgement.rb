@@ -14,4 +14,6 @@ class Judgement < ApplicationRecord
       application/vnd.openxmlformats-officedocument.wordprocessingml.document
     ]
   }
+
+  scope :by_created_date, -> { order(created_at: :desc) }
 end

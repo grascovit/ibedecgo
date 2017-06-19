@@ -3,15 +3,15 @@ FactoryGirl.define do
     title { Faker::Lorem.sentence }
     released_at { Faker::Date.between(2.days.ago, 2.days.from_now) }
     category { Judgement.categories.keys.sample }
-    attachment
-    user
+    attachment { Rack::Test::UploadedFile.new("#{Rails.root}/spec/support/fixtures/document.pdf", 'application/pdf') }
+    user_id { create(:user).id }
   end
 
-  factory :invalid_judgement, parent: :judgment do
+  factory :invalid_judgement, parent: :judgement do
     title nil
     released_at nil
     category nil
     attachment nil
-    user nil
+    user_id nil
   end
 end
