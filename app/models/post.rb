@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
   has_attached_file :image,
                     styles: { medium: '300x300>', thumb: '100x100>' },
-                    default_url: '/assets/:style/missing-image.png'
+                    default_url: ':style/missing-image.png'
   validates_attachment_content_type :image, content_type: %r{\Aimage/.*\z}
 
   scope :by_created_date, -> { order(created_at: :desc) }
