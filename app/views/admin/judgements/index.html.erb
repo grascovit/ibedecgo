@@ -6,6 +6,7 @@
 <div class="ui divided relaxed items">
   <% @judgements.each do |judgement| %>
       <div class="item">
+        <i class="<%= attachment_icon_class(judgement.attachment.content_type) %>"></i>
         <div class="content">
           <div class="header">
             <%= judgement.title %>

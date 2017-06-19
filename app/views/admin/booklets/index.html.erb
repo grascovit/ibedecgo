@@ -1,0 +1,42 @@
+<%= link_to new_admin_booklet_path, class: 'ui fluid green inverted button' do %>
+    <i class="book icon"></i>
+    Criar cartilha
+<% end %>
+
+<div class="ui divided relaxed items">
+  <% @booklets.each do |booklet| %>
+      <div class="item">
+        <i class="massive <%= attachment_icon_class(booklet.attachment.content_type) %> icon"></i>
+        <div class="content">
+          <div class="header">
+            <%= booklet.title %>
+          </div>
+          <div class="meta">
+            <p>
+              Ano de lançamento: <%= booklet.year %>
+            </p>
+            <p>
+              Criada em: <%= l(booklet.created_at) %>
+            </p>
+            <p>
+              Categoria: <%= booklet_category_i18n(booklet.category) %>
+            </p>
+          </div>
+          <div class="extra">
+            <%= link_to admin_booklet_path(booklet), class: 'ui mini green inverted button' do %>
+                <i class="unhide icon"></i>
+                Visualizar
+            <% end %>
+            <%= link_to edit_admin_booklet_path(booklet), class: 'ui mini blue inverted button' do %>
+                <i class="edit icon"></i>
+                Editar
+            <% end %>
+            <%= link_to admin_booklet_path(booklet), class: 'ui mini red inverted button', data: {confirm: 'Você tem certeza?'}, method: :delete do %>
+                <i class="trash icon"></i>
+                Excluir
+            <% end %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
