@@ -15,8 +15,10 @@ class User < ApplicationRecord
 
   has_attached_file :avatar,
                     styles: { medium: '300x300>', thumb: '100x100>' },
-                    default_url: '/assets/:style/missing-avatar.png'
+                    default_url: ':style/missing-avatar.png'
   validates_attachment_content_type :avatar, content_type: %r{\Aimage/.*\z}
+
+  scope :by_created_date, -> { order(created_at: :desc) }
 
   def full_name
     "#{first_name} #{last_name}"
