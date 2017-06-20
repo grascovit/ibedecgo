@@ -1,0 +1,39 @@
+<div class="ui items">
+  <div class="item">
+    <div class="content">
+      <div class="header">
+        <%= @booklet.title %>
+      </div>
+      <div class="description">
+        <p>
+          Ano de lançamento: <%= @booklet.year %>
+        </p>
+        <p>
+          Adicionada por: <%= @booklet.user.full_name %>
+        </p>
+        <p>
+          Criada em: <%= l(@booklet.created_at) %>
+        </p>
+        <p>
+          Categoria: <%= booklet_category_i18n(@booklet.category) %>
+        </p>
+        <p>
+          Documento: <%= link_to @booklet.attachment.original_filename, @booklet.attachment.url, target: '_blank' %>
+        </p>
+        <p>
+          Descrição: <%= @booklet.description.html_safe %>
+        </p>
+      </div>
+      <div class="extra">
+        <%= link_to edit_admin_booklet_path(@booklet), class: 'ui mini blue inverted button' do %>
+            <i class="edit icon"></i>
+            Editar
+        <% end %>
+        <%= link_to admin_booklet_path(@booklet), class: 'ui mini red inverted button', data: {confirm: 'Você tem certeza?'}, method: :delete do %>
+            <i class="trash icon"></i>
+            Excluir
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

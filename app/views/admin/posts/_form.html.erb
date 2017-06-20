@@ -6,11 +6,11 @@
       <div class="column">
         <div class="field">
           <%= f.label :title %>
-          <%= f.text_field :title %>
+          <%= f.text_field :title, required: true %>
         </div>
         <div class="field">
           <%= f.label :body %>
-          <%= f.text_area :body %>
+          <%= f.cktext_area :body, required: true %>
         </div>
         <div class="field">
           <%= f.label :image %>

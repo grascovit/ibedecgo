@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'aws-sdk', '~> 2'
 gem 'cancancan'
+gem 'ckeditor'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'figaro'

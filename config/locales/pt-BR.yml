@@ -2,6 +2,8 @@ pt-BR:
   activerecord:
     models:
       address: Endereço
+      booklet: Cartilha
+      judgement: Sentença
       post: Notícia
       user: Usuário
     attributes:
@@ -13,6 +15,31 @@ pt-BR:
         city: Cidade
         state: Estado
         country: País
+        user: Usuário
+      booklet:
+        title: Título
+        description: Descrição
+        year: Ano de lançamento
+        category: Categoria
+        categories:
+          consumer: Consumidor
+          construction: Construtoras
+          sfh: SFH
+          sfi: SFI
+          social_security: Previdência social
+        attachment: Documento
+        user: Usuário
+      judgement:
+        title: Título
+        released_at: Data
+        category: Categoria
+        categories:
+          consumer: Consumidor
+          construction: Construtoras
+          sfh: SFH
+          sfi: SFI
+          social_security: Previdência social
+        attachment: Documento
         user: Usuário
       post:
         title: Título
@@ -247,7 +274,7 @@ pt-BR:
   time:
     am: ''
     formats:
-      default: "%a, %d de %B de %Y, %H:%M:%S %z"
+      default: "%a, %d de %B de %Y, %H:%M:%S"
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: ''
