@@ -29,7 +29,7 @@ coverage/
 .idea/
 
 # Ignore Unicorn logs, pids and sockets
-shared/
+/shared
 
 # Ignore compiled assets
 public/assets/
