@@ -51,6 +51,11 @@ class Admin::JudgementsController < AdminController
   end
 
   def judgement_params
-    params.require(:judgement).permit(:title, :released_at, :category, :attachment)
+    params.require(:judgement).permit(
+      :title,
+      :released_at,
+      :category,
+      :attachment
+    )
   end
 end

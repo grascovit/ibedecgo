@@ -51,6 +51,12 @@ class Admin::BookletsController < AdminController
   end
 
   def booklet_params
-    params.require(:booklet).permit(:title, :description, :year, :category, :attachment)
+    params.require(:booklet).permit(
+      :title,
+      :description,
+      :year,
+      :category,
+      :attachment
+    )
   end
 end
