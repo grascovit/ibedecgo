@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :address, dependent: :destroy
-  has_many :posts
+  has_many :booklets, dependent: :nullify
+  has_many :judgements, dependent: :nullify
+  has_many :posts, dependent: :nullify
 
   validates :first_name, presence: true
   validates :cpf, presence: true, uniqueness: true, length: { is: 11 }
