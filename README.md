@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/grascovit/ibedecgo.svg?branch=master)](https://travis-ci.org/grascovit/ibedecgo)
+[![Code Climate](https://codeclimate.com/github/grascovit/ibedecgo/badges/gpa.svg)](https://codeclimate.com/github/grascovit/ibedecgo)
+[![codecov](https://codecov.io/gh/grascovit/ibedecgo/branch/develop/graph/badge.svg)](https://codecov.io/gh/grascovit/ibedecgo)
 
 # IBEDEC-GO
 
