@@ -9,7 +9,7 @@
           Data: <%= l(@judgement.released_at, default: '--/--/----') %>
         </p>
         <p>
-          Adicionada por: <%= @judgement.user.full_name %>
+          Adicionada por: <%= @judgement.user.full_name if @judgement.user %>
         </p>
         <p>
           Criada em: <%= l(@judgement.created_at) %>

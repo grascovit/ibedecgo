@@ -9,7 +9,7 @@
       </div>
       <div class="description">
         <p>
-          Autor(a): <%= @post.user.full_name %>
+          Autor(a): <%= @post.user.full_name if @post.user %>
         </p>
         <p>
           Criada em: <%= l(@post.created_at) %>
