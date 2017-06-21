@@ -1,0 +1,23 @@
+<div class="devise">
+  <h3 class="ui center aligned header">Reenviar instruções de confirmação</h3>
+
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: {method: :post, class: 'ui form'}) do |f| %>
+    <%= render 'shared/error_messages', object: resource %>
+
+    <div class="ui grid">
+      <div class="row">
+        <div class="column">
+          <div class="required field">
+            <%= f.label :email %>
+            <%= f.email_field :email, required: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+          </div>
+          <div class="field">
+            <%= f.submit 'Enviar', class: 'ui submit fluid blue inverted button' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= render 'devise/shared/links' %>
+</div>

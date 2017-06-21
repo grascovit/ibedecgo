@@ -1,0 +1,29 @@
+<div class="devise">
+  <h3 class="ui center aligned header">Alterar senha</h3>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :put, class: 'ui form'}) do |f| %>
+    <%= render 'shared/error_messages', object: resource %>
+
+    <%= f.hidden_field :reset_password_token %>
+
+    <div class="ui grid">
+      <div class="row">
+        <div class="column">
+          <div class="required field">
+            <%= f.label :password, 'Nova senha' %>
+            <%= f.password_field :password, required: true, autocomplete: 'off' %>
+          </div>
+          <div class="required field">
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, required: true, autocomplete: 'off' %>
+          </div>
+          <div class="field">
+            <%= f.submit 'Alterar', class: 'ui submit fluid blue inverted button' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= render 'devise/shared/links' %>
+</div>

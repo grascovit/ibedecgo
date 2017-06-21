@@ -1,0 +1,44 @@
+<div class="devise">
+  <h3 class="ui center aligned header">Alterar dados</h3>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put, class: 'ui form'}) do |f| %>
+    <%= render 'shared/error_messages', object: resource %>
+
+    <div class="ui grid">
+      <div class="row">
+        <div class="column">
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div class="field">
+              Por favor, confirme seu endereço de email: <%= resource.unconfirmed_email %>
+            </div>
+          <% end %>
+          <div class="field">
+            <%= f.label :email %>
+            <%= f.email_field :email, autofocus: true %>
+          </div>
+          <div class="field">
+            <%= f.label :phone %>
+            <%= f.text_field :phone %>
+          </div>
+          <div class="field">
+            <%= f.label :gender %>
+            <%= f.select :gender, gender_options %>
+          </div>
+          <div class="field">
+            <%= f.label :avatar %>
+            <%= f.file_field :avatar %>
+          </div>
+          <div class="field">
+            <%= f.label :current_password %>
+            <%= f.password_field :current_password, required: true, autocomplete: 'off' %>
+          </div>
+          <div class="field">
+            <%= f.submit 'Atualizar', class: 'ui submit fluid blue inverted button' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= render 'devise/shared/links' %>
+</div>
