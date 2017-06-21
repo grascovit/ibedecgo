@@ -16,3 +16,7 @@
 //= require semantic-ui
 //= require ckeditor/init
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+  $('.ui.dropdown').dropdown();
+});

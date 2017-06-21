@@ -3,12 +3,24 @@
   <head>
     <title>IBEDEC-GO</title>
     <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="ui container">
+      <%= render 'shared/navbar' %>
+      <div class="ui divider"></div>
+      <div class="ui stackable grid">
+        <div class="column">
+          <%= render 'shared/flash_messages' %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

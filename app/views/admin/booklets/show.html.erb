@@ -9,7 +9,7 @@
           Ano de lançamento: <%= @booklet.year %>
         </p>
         <p>
-          Adicionada por: <%= @booklet.user.full_name %>
+          Adicionada por: <%= @booklet.user.full_name if @booklet.user %>
         </p>
         <p>
           Criada em: <%= l(@booklet.created_at) %>
