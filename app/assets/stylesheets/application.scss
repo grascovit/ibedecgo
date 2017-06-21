@@ -15,15 +15,23 @@
  *= require_self
  */
 
+/*--------------------
+        Container
+---------------------*/
+
 .container {
   margin: 1rem;
 }
 
+
+/*--------------------
+        Errors
+---------------------*/
+
 .field_with_errors > label {
   font-weight: bold;
   color: #C82121;
-}
-
-.document.icon {
-  margin: 0.1em;
+  display: block;
+  margin: 0 0 0.28571429rem 0;
+  font-size: 0.92857143em;
 }
