@@ -3,7 +3,7 @@ class Admin::UsersController < AdminController
 
   # GET /users
   def index
-    @users = User.by_created_date
+    @users = User.by_first_name
   end
 
   # GET /users/1

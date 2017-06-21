@@ -32,16 +32,16 @@ RSpec.describe User, type: :model do
   end
 
   describe 'scopes' do
-    describe '.by_created_date' do
-      it 'returns the users ordered by descending creation date' do
-        old_user = create(:user)
-        middle_user = create(:user)
-        new_user = create(:user)
-        ordered_users = User.by_created_date
+    describe '.by_first_name' do
+      it 'returns the users ordered by ascending first name' do
+        first_user = create(:user, first_name: 'Aaron')
+        middle_user = create(:user, first_name: 'Billy')
+        last_user = create(:user, first_name: 'Charlie')
+        ordered_users = User.by_first_name
 
-        expect(ordered_users.first).to eq new_user
+        expect(ordered_users.first).to eq first_user
         expect(ordered_users.second).to eq middle_user
-        expect(ordered_users.last).to eq old_user
+        expect(ordered_users.last).to eq last_user
       end
     end
   end
