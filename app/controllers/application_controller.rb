@@ -6,23 +6,21 @@ class ApplicationController < ActionController::Base
   # :nocov:
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys:
-      [
-        :first_name,
-        :last_name,
-        :cpf,
-        :phone,
-        :gender,
-        :birth_date,
-        :avatar
-      ]
-    )
+      %i[
+        first_name
+        last_name
+        cpf
+        phone
+        gender
+        birth_date
+        avatar
+      ])
 
     devise_parameter_sanitizer.permit(:account_update, keys:
-      [
-        :phone,
-        :gender,
-        :avatar
-      ]
-    )
+      %i[
+        phone
+        gender
+        avatar
+      ])
   end
 end
