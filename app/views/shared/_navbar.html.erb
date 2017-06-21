@@ -1,0 +1,19 @@
+<div class="ui secondary menu">
+  <%= link_to root_path, class: 'item' do %>
+    <strong>IBEDEC-GO</strong>
+  <% end %>
+  <div class="right menu">
+    <% if user_signed_in? %>
+      <div class="ui user-avatar dropdown item">
+        <%= image_tag current_user.avatar.url(:medium), class: 'ui circular user-avatar image' %>
+        <div class="menu">
+          <%= link_to 'Painel de administrador', admin_root_path, class: 'item' %>
+          <%= link_to 'Alterar dados', edit_user_registration_path, class: 'item' %>
+          <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'item' %>
+        </div>
+      </div>
+    <% else %>
+      <%= link_to 'Entrar', new_user_session_path, class: 'ui item' %>
+    <% end %>
+  </div>
+</div>
