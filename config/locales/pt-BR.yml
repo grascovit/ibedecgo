@@ -51,6 +51,8 @@ pt-BR:
         last_name: Sobrenome
         email: Email
         password: Senha
+        password_confirmation: Confirme a senha
+        current_password: Senha
         cpf: CPF
         phone: Telefone
         gender: Sexo
@@ -60,6 +62,8 @@ pt-BR:
           not_telling: Não informado
         birth_date: Data de nascimento
         address: Endereço
+        remember_me: Lembrar de mim
+        avatar: Imagem de perfil
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
@@ -179,7 +183,7 @@ pt-BR:
       greater_than: deve ser maior que %{count}
       greater_than_or_equal_to: deve ser maior ou igual a %{count}
       inclusion: não está incluído na lista
-      invalid: não é válido
+      invalid: não é válido(a)
       less_than: deve ser menor que %{count}
       less_than_or_equal_to: deve ser menor ou igual a %{count}
       model_invalid: 'A validação falhou: %{errors}'

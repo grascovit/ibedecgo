@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :address, dependent: :destroy
-  has_many :posts
+  has_many :booklets, dependent: :nullify
+  has_many :judgements, dependent: :nullify
+  has_many :posts, dependent: :nullify
 
   validates :first_name, presence: true
   validates :cpf, presence: true, uniqueness: true, length: { is: 11 }
@@ -18,7 +20,7 @@ class User < ApplicationRecord
                     default_url: ':style/missing-avatar.png'
   validates_attachment_content_type :avatar, content_type: %r{\Aimage/.*\z}
 
-  scope :by_created_date, -> { order(created_at: :desc) }
+  scope :by_first_name, -> { order(first_name: :asc) }
 
   def full_name
     "#{first_name} #{last_name}"
