@@ -10,4 +10,5 @@ class Post < ApplicationRecord
   validates_attachment_content_type :image, content_type: %r{\Aimage/.*\z}
 
   scope :by_created_date, -> { order(created_at: :desc) }
+  scope :recent, -> { by_created_date.limit(3) }
 end
