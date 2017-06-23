@@ -1,7 +1,7 @@
 class Judgement < ApplicationRecord
   enum category: %i[construction sfh sfi social_security consumer]
 
-  belongs_to :user
+  belongs_to :user, optional: true
 
   validates :title, presence: true
   validates :category, presence: true

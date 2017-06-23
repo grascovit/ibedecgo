@@ -5,7 +5,7 @@ FactoryGirl.define do
     year { Faker::Number.number(4).to_i }
     category { Booklet.categories.keys.sample }
     attachment { Rack::Test::UploadedFile.new("#{Rails.root}/spec/support/fixtures/document.pdf", 'application/pdf') }
-    user_id { create(:user).id }
+    user
   end
 
   factory :invalid_booklet, parent: :booklet do
@@ -14,6 +14,6 @@ FactoryGirl.define do
     year nil
     category nil
     attachment nil
-    user_id nil
+    user nil
   end
 end
