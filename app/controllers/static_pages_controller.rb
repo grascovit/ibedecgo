@@ -13,7 +13,9 @@ class StaticPagesController < ApplicationController
 
   def judgements; end
 
-  def news; end
+  def news
+    @posts = Post.by_created_date
+  end
 
   def videos; end
 end

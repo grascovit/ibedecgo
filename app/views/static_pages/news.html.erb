@@ -1,2 +1,23 @@
-<h1>StaticPages#news</h1>
-<p>Find me in app/views/static_pages/news.html.erb</p>
+<div class="ui container news">
+  <div class="ui horizontal divider">
+    <h2 class="ui center aligned header">NOTÍCIAS</h2>
+  </div>
+  <div class="ui three stackable cards">
+    <% @posts.each do |post| %>
+        <a class="card">
+          <div class="image">
+            <%= image_tag post.image.url(:medium) %>
+          </div>
+          <div class="content">
+            <div class="header"><%= post.title %></div>
+          </div>
+          <div class="extra content">
+            <div>
+              <i class="clock icon"></i>
+              <%= l(post.created_at) %>
+            </div>
+          </div>
+        </a>
+    <% end %>
+  </div>
+</div>
