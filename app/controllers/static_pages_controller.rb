@@ -7,7 +7,9 @@ class StaticPagesController < ApplicationController
 
   def expertise; end
 
-  def home; end
+  def home
+    @posts = Post.recent
+  end
 
   def judgements; end
 

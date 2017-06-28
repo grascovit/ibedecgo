@@ -1,2 +1,63 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="intro-header">
+  <div class="intro">
+    <h1 class="title">IBEDEC GOIÁS</h1>
+    <p class="paragraph">Desde 2010 atuando na defesa dos consumidores goianos</p>
+    <button class="ui inverted large call-to-action button">RECEBA NOSSAS NOTÍCIAS</button>
+  </div>
+</div>
+
+<div class="ui container stats">
+  <div class="ui horizontal divider">
+    <h2 class="ui center aligned header">NOSSOS NÚMEROS</h2>
+  </div>
+  <div class="ui statistics">
+    <div class="statistic">
+      <div class="value">
+        +9.000
+      </div>
+      <div class="label">
+        atendimentos gratuitos
+      </div>
+    </div>
+    <div class="statistic">
+      <div class="value">
+        +20.000
+      </div>
+      <div class="label">
+        alguma coisa incrível
+      </div>
+    </div>
+    <div class="statistic">
+      <div class="value">
+        +30
+      </div>
+      <div class="label">
+        outra coisa incrível por mês
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui container news">
+  <div class="ui horizontal divider">
+    <h2 class="ui center aligned header">ÚLTIMAS NOTÍCIAS</h2>
+  </div>
+  <div class="ui three stackable cards">
+    <% @posts.each do |post| %>
+      <a class="card">
+        <div class="image">
+          <%= image_tag post.image.url(:medium) %>
+        </div>
+        <div class="content">
+          <div class="header"><%= post.title %></div>
+        </div>
+        <div class="extra content">
+          <div>
+            <i class="clock icon"></i>
+            <%= l(post.created_at) %>
+          </div>
+        </div>
+      </a>
+    <% end %>
+  </div>
+</div>
