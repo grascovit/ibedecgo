@@ -14,12 +14,11 @@
   <body>
     <div class="ui container">
       <%= render 'shared/navbar' %>
-      <div class="ui divider"></div>
-      <div class="ui stackable grid">
-        <div class="column">
-          <%= render 'shared/flash_messages' %>
-          <%= yield %>
-        </div>
+      <%= render 'shared/flash_messages' %>
+    </div>
+    <div class="ui stackable grid">
+      <div class="column">
+        <%= yield %>
       </div>
     </div>
   </body>

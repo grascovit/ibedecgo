@@ -1,3 +1,7 @@
+/*--------------------
+        Menu
+---------------------*/
+
 .ui.secondary.menu {
   .user-avatar.dropdown.item:hover {
     cursor: pointer;
@@ -5,12 +9,54 @@
   }
 
   .user-avatar.dropdown.item {
-    margin: 0 0.3em 0 0;
+    margin: 0 0.1em 0 0;
     padding: 0 0.3em 0 0;
     background: transparent;
   }
+
+  .item.logo {
+    padding: 0 0.3em 0 0;
+  }
+
+  .item.logo:hover {
+    cursor: pointer;
+    background: transparent;
+  }
+
+  .item {
+    font-size: 1.1rem;
+  }
 }
+
+/*--------------------
+        User avatar
+---------------------*/
 
 .ui.circular.user-avatar.image {
   width: 30px;
+}
+
+/*--------------------
+   Mobile and tablet
+---------------------*/
+
+@media only screen and (max-width: 1199px) {
+  .mobile.only {
+    overflow: auto;
+
+    .item.logo {
+      float: left;
+      margin-bottom: 1em;
+    }
+
+    .menu.item.toggle {
+      float: right;
+      margin-top: 1em;
+    }
+
+    .ui.vertical.inverted.fluid.menu {
+      display: none;
+      clear: both;
+    }
+  }
 }

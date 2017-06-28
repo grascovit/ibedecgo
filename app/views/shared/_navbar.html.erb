@@ -1,8 +1,15 @@
-<div class="ui secondary menu">
-  <%= link_to root_path, class: 'item' do %>
-    <strong>IBEDEC-GO</strong>
+<div class="ui stackable secondary mobile hidden menu">
+  <%= link_to root_path, class: 'item logo' do %>
+    <%= image_tag 'logo', class: 'ui rounded small image' %>
   <% end %>
   <div class="right menu">
+    <%= link_to 'O IBEDEC', about_path, class: 'item' %>
+    <%= link_to 'Notícias', news_path, class: 'item' %>
+    <%= link_to 'Vídeos', videos_path, class: 'item' %>
+    <%= link_to 'Áreas de atuação', expertise_path, class: 'item' %>
+    <%= link_to 'Sentenças e decisões', judgements_path, class: 'item' %>
+    <%= link_to 'Cartilhas e manuais', booklets_path, class: 'item' %>
+    <%= link_to 'Contato', contact_path, class: 'item' %>
     <% if user_signed_in? %>
       <div class="ui user-avatar dropdown item">
         <%= image_tag current_user.avatar.url(:medium), class: 'ui circular user-avatar image' %>
@@ -12,8 +19,24 @@
           <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'item' %>
         </div>
       </div>
-    <% else %>
-      <%= link_to 'Entrar', new_user_session_path, class: 'ui item' %>
     <% end %>
+  </div>
+</div>
+
+<div class="mobile only menu">
+  <%= link_to root_path, class: 'item logo' do %>
+      <%= image_tag 'logo', class: 'ui rounded small image' %>
+  <% end %>
+  <a href="#" class="menu item toggle">
+    <i class="black large content icon"></i>
+  </a>
+  <div class="ui vertical inverted fluid menu">
+    <%= link_to 'Início', home_path, class: 'item' %>
+    <%= link_to 'O IBEDEC', about_path, class: 'item' %>
+    <%= link_to 'Notícias', news_path, class: 'item' %>
+    <%= link_to 'Vídeos', videos_path, class: 'item' %>
+    <%= link_to 'Áreas de atuação', expertise_path, class: 'item' %>
+    <%= link_to 'Sentenças e decisões', judgements_path, class: 'item' %>
+    <%= link_to 'Cartilhas e manuais', booklets_path, class: 'item' %>
   </div>
 </div>

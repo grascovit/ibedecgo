@@ -17,6 +17,18 @@
 //= require ckeditor/init
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
+$(document).on('turbolinks:load', function () {
   $('.ui.dropdown').dropdown();
+
+  $('.menu.toggle').click(function (event) {
+    var menu = $('.mobile.only > .ui.vertical.menu');
+    menu.transition({
+      animation: 'slide down',
+      onComplete: function () {
+        menu.hasClass('hidden') ? menu.hide() : menu.show();
+      }
+    });
+
+    event.preventDefault();
+  });
 });

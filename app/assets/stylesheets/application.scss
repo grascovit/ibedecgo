@@ -35,3 +35,19 @@
   margin: 0 0 0.28571429rem 0;
   font-size: 0.92857143em;
 }
+
+/*--------------------
+   Mobile and tablet
+---------------------*/
+
+@media only screen and (max-width: 1199px) {
+  .mobile.hidden {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .mobile.only {
+    display: none;
+  }
+}
