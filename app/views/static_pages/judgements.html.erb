@@ -1,2 +1,25 @@
-<h1>StaticPages#judgements</h1>
-<p>Find me in app/views/static_pages/judgements.html.erb</p>
+<div class="ui container judgements">
+  <div class="ui horizontal divider">
+    <h2 class="ui center aligned header">SENTENÇAS E DECISÕES</h2>
+  </div>
+  <div class="ui divided relaxed items">
+    <% @judgements.each do |judgement| %>
+        <%= link_to judgement.attachment.url, class: 'item' do %>
+            <i class="<%= attachment_icon_class(judgement.attachment.content_type) %>"></i>
+            <div class="content">
+              <div class="header">
+                <%= judgement.title %>
+              </div>
+              <div class="meta">
+                <p>
+                  Adicionada em: <%= l(judgement.created_at) %>
+                </p>
+                <p>
+                  Categoria: <%= judgement_category_i18n(judgement.category) %>
+                </p>
+              </div>
+            </div>
+        <% end %>
+    <% end %>
+  </div>
+</div>

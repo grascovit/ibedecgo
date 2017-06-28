@@ -6,7 +6,7 @@
 <div class="ui divided relaxed items">
   <% @booklets.each do |booklet| %>
       <div class="item">
-        <i class="massive <%= attachment_icon_class(booklet.attachment.content_type) %> icon"></i>
+        <i class="<%= attachment_icon_class(booklet.attachment.content_type) %>"></i>
         <div class="content">
           <div class="header">
             <%= booklet.title %>

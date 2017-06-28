@@ -11,7 +11,9 @@ class StaticPagesController < ApplicationController
     @posts = Post.recent
   end
 
-  def judgements; end
+  def judgements
+    @judgements = Judgement.by_created_date
+  end
 
   def news
     @posts = Post.by_created_date

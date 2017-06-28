@@ -36,9 +36,31 @@
   font-size: 0.92857143em;
 }
 
+
+/*--------------------
+        Divider
+---------------------*/
+.ui.horizontal.divider {
+  .ui.center.aligned.header {
+    margin: 1em 0;
+  }
+}
+
+
 /*--------------------
    Mobile and tablet
 ---------------------*/
+
+@media only screen and (max-width: 767px) {
+  .ui.relaxed.divided.items > .item {
+    text-align: center;
+    display: inline-block;
+
+    .document.icon {
+      margin-bottom: 0.2em;
+    }
+  }
+}
 
 @media only screen and (max-width: 1199px) {
   .mobile.hidden {
