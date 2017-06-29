@@ -4,22 +4,22 @@
   </div>
   <div class="ui divided relaxed items">
     <% @judgements.each do |judgement| %>
-        <%= link_to judgement.attachment.url, class: 'item' do %>
-            <i class="<%= attachment_icon_class(judgement.attachment.content_type) %>"></i>
-            <div class="content">
-              <div class="header">
-                <%= judgement.title %>
-              </div>
-              <div class="meta">
-                <p>
-                  Adicionada em: <%= l(judgement.created_at) %>
-                </p>
-                <p>
-                  Categoria: <%= judgement_category_i18n(judgement.category) %>
-                </p>
-              </div>
+      <%= link_to judgement.attachment.url, class: 'item' do %>
+          <i class="<%= attachment_icon_class(judgement.attachment.content_type) %>"></i>
+          <div class="content">
+            <div class="header">
+              <%= judgement.title %>
             </div>
-        <% end %>
+            <div class="meta">
+              <p>
+                Adicionada em: <%= l(judgement.created_at) %>
+              </p>
+              <p>
+                Categoria: <%= judgement_category_i18n(judgement.category) %>
+              </p>
+            </div>
+          </div>
+      <% end %>
     <% end %>
   </div>
 </div>

@@ -25,7 +25,7 @@
 
 <div class="mobile only menu">
   <%= link_to root_path, class: 'item logo' do %>
-      <%= image_tag 'logo', class: 'ui rounded small image' %>
+    <%= image_tag 'logo', class: 'ui rounded small image' %>
   <% end %>
   <a href="#" class="menu item toggle">
     <i class="black large content icon"></i>
@@ -38,5 +38,11 @@
     <%= link_to 'Áreas de atuação', expertise_path, class: 'item' %>
     <%= link_to 'Sentenças e decisões', judgements_path, class: 'item' %>
     <%= link_to 'Cartilhas e manuais', booklets_path, class: 'item' %>
+    <%= link_to 'Contato', contact_path, class: 'item' %>
+    <% if user_signed_in? %>
+      <%= link_to 'Painel de administrador', admin_root_path, class: 'item' %>
+      <%= link_to 'Alterar dados', edit_user_registration_path, class: 'item' %>
+      <%= link_to 'Sair', destroy_user_session_path, method: :delete, class: 'item' %>
+    <% end %>
   </div>
 </div>

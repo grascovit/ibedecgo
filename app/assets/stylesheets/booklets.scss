@@ -1,0 +1,13 @@
+/*--------------------
+      Booklets
+-------------------- */
+
+.ui.container.booklets {
+  margin-bottom: 2em;
+
+  .ui.relaxed.divided.items > .item {
+    .content {
+      margin-top: 1.5em;
+    }
+  }
+}

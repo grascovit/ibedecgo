@@ -1,7 +1,9 @@
 class StaticPagesController < ApplicationController
   def about; end
 
-  def booklets; end
+  def booklets
+    @booklets = Booklet.by_created_date
+  end
 
   def contact; end
 
