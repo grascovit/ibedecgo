@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  resources :posts, only: [:show]
+
   namespace :admin do
     resources :booklets
     resources :judgements
