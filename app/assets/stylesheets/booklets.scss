@@ -3,7 +3,9 @@
 -------------------- */
 
 .ui.container.booklets {
-  margin-bottom: 2em;
+  .ui.center.aligned.header {
+    margin: 1.5em 0;
+  }
 
   .ui.relaxed.divided.items > .item {
     .content {

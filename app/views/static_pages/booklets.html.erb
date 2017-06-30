@@ -4,21 +4,21 @@
   </div>
   <div class="ui divided relaxed items">
     <% @booklets.each do |booklet| %>
-      <%= link_to booklet.attachment.url, class: 'item' do %>
-          <i class="<%= attachment_icon_class(booklet.attachment.content_type) %>"></i>
-          <div class="content">
-            <div class="header">
-              <%= booklet.title %>
-            </div>
-            <div class="meta">
-              <p>
-                Ano de lançamento: <%= booklet.year %>
-              </p>
-              <p>
-                Categoria: <%= booklet_category_i18n(booklet.category) %>
-              </p>
-            </div>
+      <%= link_to booklet_path(booklet), class: 'item' do %>
+        <i class="<%= attachment_icon_class(booklet.attachment.content_type) %>"></i>
+        <div class="content">
+          <div class="header">
+            <%= booklet.title %>
           </div>
+          <div class="meta">
+            <p>
+              Ano de lançamento: <%= booklet.year %>
+            </p>
+            <p>
+              Categoria: <%= booklet_category_i18n(booklet.category) %>
+            </p>
+          </div>
+        </div>
       <% end %>
     <% end %>
   </div>

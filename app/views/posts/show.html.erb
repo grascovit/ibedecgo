@@ -3,4 +3,8 @@
   <div class="ui raised segment">
     <%= @post.body.html_safe %>
   </div>
+  <%= link_to :back, class: 'ui red inverted button' do %>
+      <i class="arrow left icon"></i>
+      Voltar
+  <% end %>
 </div>
