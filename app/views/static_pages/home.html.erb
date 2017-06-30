@@ -44,7 +44,7 @@
   </div>
   <div class="ui three stackable cards">
     <% @posts.each do |post| %>
-      <a class="card">
+      <%= link_to post_path(post), class: 'card' do %>
         <div class="image">
           <%= image_tag post.image.url %>
         </div>
@@ -57,7 +57,7 @@
             <%= l(post.created_at) %>
           </div>
         </div>
-      </a>
+      <% end %>
     <% end %>
   </div>
 </div>
