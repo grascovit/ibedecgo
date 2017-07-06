@@ -1,0 +1,12 @@
+/*--------------------
+    Expertise areas
+-------------------- */
+
+.ui.container.expertise {
+  .ui.relaxed.divided.items > .item {
+    .description {
+      text-align: justify;
+      font-size: 1.1rem;
+    }
+  }
+}
