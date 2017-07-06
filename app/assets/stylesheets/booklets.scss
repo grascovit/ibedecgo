@@ -4,12 +4,21 @@
 
 .ui.container.booklets {
   .ui.center.aligned.header {
-    margin: 1.5em 0;
+    margin: 1.5em 0 0.2em;
   }
 
   .ui.relaxed.divided.items > .item {
     .content {
       margin-top: 1.5em;
     }
+  }
+
+  .year {
+    text-align: center;
+  }
+
+  .description {
+    margin: 3em 0 2em;
+    text-align: justify;
   }
 }

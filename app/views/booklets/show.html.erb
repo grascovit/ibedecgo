@@ -1,15 +1,15 @@
 <div class="ui container booklets">
   <h2 class="ui center aligned header"><%= @booklet.title %></h2>
-  <p class="ui center aligned header">Ano de lançamento: <strong><%= @booklet.year %></strong></p>
-  <div class="ui raised segment">
+  <p class="year"><%= @booklet.year %></p>
+  <div class="description">
     <%= @booklet.description.html_safe %>
   </div>
   <%= link_to @booklet.attachment.url, class: 'ui green inverted button' do %>
-      <i class="download icon"></i>
-      Baixar
+    <i class="download icon"></i>
+    Baixar
   <% end %>
-  <%= link_to :back, class: 'ui red inverted button' do %>
-      <i class="arrow left icon"></i>
-      Voltar
+  <%= link_to :back, class: 'ui blue inverted button' do %>
+    <i class="arrow left icon"></i>
+    Voltar
   <% end %>
 </div>
