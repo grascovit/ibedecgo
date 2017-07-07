@@ -1,0 +1,29 @@
+/*--------------------
+       Contact
+-------------------- */
+
+.ui.container.contact {
+  .ui.relaxed.items {
+    margin-bottom: 3em;
+
+    .item {
+      margin: 1em 0 2em;
+
+      .description {
+        text-align: justify;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .map > iframe {
+    width: 100%;
+  }
+}
+
+
+@media only screen and (max-width: 767px) {
+  .ui.relaxed.items > .item {
+    text-align: center;
+  }
+}
